@@ -1,4 +1,5 @@
-* Intro
+Intro
+=====
 
 These examples make little sense outside of the tutorial itself.
 
