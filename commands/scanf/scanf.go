@@ -38,8 +38,8 @@ func main() {
 
 	var device string
 	var rs, ws, srs, sws, ign float32
-  devin := "%s %f %f %f %f %f %f %f %f %f %f %f"
-  devout := "%s|%s|%.2f|%.2f|%.2f|%.2f\n"
+	devin := "%s %f %f %f %f %f %f %f %f %f %f %f"
+	devout := "%s|%s|%.2f|%.2f|%.2f|%.2f\n"
 
 	for {
 		if buf, err := out.ReadString('\n'); err != nil {
@@ -47,7 +47,7 @@ func main() {
 		} else {
 			if _, err := fmt.Sscanf(buf, tsin, &mm, &dd, &yy, &h, &m, &s, &ap); err == nil { // (2)
 				ts = fmt.Sprintf(tsout, mm, dd, yy, h, m, s, ap) // (3)
-				continue // (4)
+				continue                                         // (4)
 			}
 			if _, err := fmt.Sscanf(buf, devin, &device, &ign, &rs, &ws, &srs, &sws, &ign, &ign, &ign, &ign, &ign, &ign); err == nil { // (5)
 				if _, ok := subs[device]; ok {

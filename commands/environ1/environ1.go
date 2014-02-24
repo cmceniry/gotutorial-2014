@@ -4,7 +4,7 @@ import "fmt"
 import "syscall"
 
 func main() {
-    if val, found := syscall.Getenv("GOPATH"); found {
-        fmt.Println(val)
-    }
+	if val, found := syscall.Getenv("GOPATH"); found {
+		fmt.Println(val)
+	}
 }

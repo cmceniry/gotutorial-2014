@@ -6,4 +6,3 @@ import (
 	"github.com/cmceniry/gotutorial/subRegexp"
 	"github.com/cmceniry/gotutorial/subScanf"
 )
-
