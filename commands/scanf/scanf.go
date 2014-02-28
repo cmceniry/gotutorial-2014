@@ -42,14 +42,14 @@ func main() {
 	devout := "%s|%s|%.2f|%.2f|%.2f|%.2f\n"
 
 	for {
-		if buf, err := out.ReadString('\n'); err != nil {
+		if line, err := out.ReadString('\n'); err != nil {
 			os.Exit(-1)
 		} else {
-			if _, err := fmt.Sscanf(buf, tsin, &mm, &dd, &yy, &h, &m, &s, &ap); err == nil { // (2)
+			if _, err := fmt.Sscanf(line, tsin, &mm, &dd, &yy, &h, &m, &s, &ap); err == nil { // (2)
 				ts = fmt.Sprintf(tsout, mm, dd, yy, h, m, s, ap) // (3)
 				continue                                         // (4)
 			}
-			if _, err := fmt.Sscanf(buf, devin, &device, &ign, &rs, &ws, &srs, &sws, &ign, &ign, &ign, &ign, &ign, &ign); err == nil { // (5)
+			if _, err := fmt.Sscanf(line, devin, &device, &ign, &rs, &ws, &srs, &sws, &ign, &ign, &ign, &ign, &ign, &ign); err == nil { // (5)
 				if _, ok := subs[device]; ok {
 					fmt.Printf(devout, ts, subs[device], rs, ws, srs, sws)
 				} else {
