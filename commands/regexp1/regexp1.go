@@ -1,11 +1,10 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"regexp"
-)
+
+import "bufio"
+import "fmt"
+import "os"
+import "regexp"
 
 func substitute(before string) string { // (1)
 	if re, err := regexp.Compile("dm-2  "); err == nil { // (2)

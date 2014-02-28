@@ -1,11 +1,9 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-	"os/exec"
-)
+import "bufio"
+import "fmt"
+import "os"
+import "os/exec"
 
 var subs = map[string]string{
 	"dm-2": "ASM001",

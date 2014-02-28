@@ -1,10 +1,8 @@
 package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-)
+import "bufio"
+import "fmt"
+import "os"
 
 func main() {
 	bio := bufio.NewReader(os.Stdin)

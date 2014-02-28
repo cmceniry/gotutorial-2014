@@ -1,12 +1,10 @@
 package main
 
-import (
-	"bufio"
-	"flag"
-	"fmt"
-	"os"
-	"regexp"
-)
+import "bufio"
+import "flag"
+import "fmt"
+import "os"
+import "regexp"
 
 var subs = map[string]string{
 	"dm-2  ": "ASM001",
