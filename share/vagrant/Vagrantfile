@@ -71,6 +71,13 @@ yum install -y sysstat
 # Fixing permissions
 chown -R vagrant:vagrant /home/vagrant
 
+# Setting motd
+cat > /etc/motd <<EOF
+Welcome to the Go for System Tools exercises
+
+"cd gotutorial" to get started
+EOF
+
 SHELL
 
   #config.vm.provision "puppet" do |puppet|
