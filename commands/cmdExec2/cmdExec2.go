@@ -5,8 +5,9 @@ import "os/exec"
 import "time"
 
 func main() {
+	args := []string{"-xt", "/dev/loop1","/dev/loop2", "/dev/loop3", "/dev/loop4"}
 	buf := make([]byte, 2048)
-	cmd := exec.Command("/usr/bin/iostat", "-xt")
+	cmd := exec.Command("/usr/bin/iostat", args...)
 	stdoutpipe, err := cmd.StdoutPipe()
 	if err != nil {
 		panic(err)

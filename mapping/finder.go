@@ -16,6 +16,12 @@ func findDev(rdev uint64) (string, error) {
 	}
 	for _, devinfo := range devs {
 		if !devinfo.IsDir() {
+			if devinfo.Mode() & os.ModeCharDevice == os.ModeCharDevice {
+				continue 
+			}
+			if devinfo.Mode() & os.ModeDevice != os.ModeDevice {
+				continue
+			}
 			if devinfo.Sys().(*syscall.Stat_t).Rdev == rdev {
 				return devinfo.Name(), nil
 			}

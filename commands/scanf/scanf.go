@@ -6,18 +6,15 @@ import "os"
 import "os/exec"
 
 var subs = map[string]string{
-	"dm-2": "ASM001",
-	"dm-3": "ASM002",
-	"dm-4": "ASM003",
-	"dm-5": "ASM004",
-	"dm-6": "ASM005",
-	"dm-7": "ASM006",
-	"dm-8": "ASM007",
-	"dm-9": "ASM008",
+	"loop1": "ASM001",
+	"loop2": "ASM002",
+	"loop3": "ASM003",
+	"loop4": "ASM004",
 }
 
 func main() {
-	cmd := exec.Command("iostat", "-xt", "2")
+	args := []string{"-xt", "/dev/loop1", "/dev/loop2", "/dev/loop3", "/dev/loop4", "2"}
+	cmd := exec.Command("iostat", args...)
 	stdout, err := cmd.StdoutPipe()
 	out := bufio.NewReader(stdout)
 	if err != nil {

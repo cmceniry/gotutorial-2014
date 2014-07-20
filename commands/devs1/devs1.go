@@ -16,7 +16,8 @@ func substitute(line string) string {
 }
 
 func cmdExec() {
-	cmd := exec.Command("iostat", "-xt", "5")
+	args := []string{"-xt", "/dev/loop1", "/dev/loop2", "/dev/loop3", "/dev/loop4", "5"}
+	cmd := exec.Command("iostat", args...)
 	stdout, err := cmd.StdoutPipe()
 	out := bufio.NewReader(stdout)
 	if err != nil {
