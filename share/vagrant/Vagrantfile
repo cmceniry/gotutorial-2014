@@ -31,9 +31,10 @@ tar -C /usr/local -zxf /tmp/go1.3.linux-amd64.tar.gz
 cat > /home/vagrant/.gotutorialrc <<EOF
 GOROOT=/usr/local/go
 GOPATH=/home/vagrant/gotutorial
+GOBIN=\\\${GOPATH}/bin
 PATH=\\\${PATH}:\\\${GOROOT}/bin
 
-export GOROOT GOPATH PATH
+export GOROOT GOPATH GOBIN PATH
 EOF
 chown vagrant:vagrant /home/vagrant/.gotutorialrc
 echo ". ~/.gotutorialrc" >> /home/vagrant/.bashrc
